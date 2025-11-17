@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "RedGifs Video Downloader",
+  "version": "1.0",
+  "author": "onupirat",
+  "description": "Adds a download button to RedGifs videos.",
+  "permissions": ["activeTab", "downloads", "downloads.shelf"],
+  "host_permissions": ["https://www.redgifs.com/*", "https://api.redgifs.com/*", "https://files.redgifs.com/*", "https://media.redgifs.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.redgifs.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_title": "RedGifs Video Downloader",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
